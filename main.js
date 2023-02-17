@@ -6,7 +6,6 @@ const listaDeTeclas = document.querySelectorAll('.tecla');
 
 for (let i = 0; i < listaDeTeclas.length; i++){
     const tecla = listaDeTeclas[i];
-    console.log(listaDeTeclas[contador]);
     const instrumento = tecla.classList[1];
 
     //template string.
@@ -14,5 +13,13 @@ for (let i = 0; i < listaDeTeclas.length; i++){
 
     tecla.onclick = function () {
         tocaSom(idAudio);
+    }
+
+    tecla.onkeydown = function () {
+        tecla.classList.add('ativa');
+    }
+    
+    tecla.onkeup = function () {
+        tecla.classList.remove('ativa');
     }
 }
